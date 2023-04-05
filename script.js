@@ -9,7 +9,11 @@ displayCurrentDateAndTimeAtTop();
 
 
 //function to open bootstrap modal
-
+$(function() {
+  $("# openButtonId").click(function() {
+    $("#id at very first modal element").modal("show");
+  });
+});
 
 
 
@@ -17,21 +21,40 @@ displayCurrentDateAndTimeAtTop();
 
 $(function() {
   //select the element with the class .btn.saveBtn.col-2.col-md-1"
-  var submitButton = $(".btn.submitBtn.col-2.col-md-1");
-  submitButton.click(function() {
+  var modalSubmitButton = $("id here");
+  modalSubmitButton.click(function() {
    
-    var taskText = $(this).siblings(".description").val();
-    var taskTime = $(this).parent().attr("id");
+    var projectName = $(this).siblings(".description").val();
+    var projectType = $(this).parent().attr("id");
+    var dueDate = $(this).parent().attr("id");
+    
 
     storeToLocal({
-      taskText: taskText,
-      taskTime: taskTime
+      projectName: projectName,
+      projectType: projectType,
+      dueDate: dueDate
     });
     
   });
 });
 
 
+ //retrieve from local storage, goes through every hour looking for stored data and retrieves it if there. if there is a saved task then it sets the textarea elemnt to the saved value
+ function retrieveFromLocal() {
+  var projectName = localStorage.getItem(projectName;
+    var projectName = localStorage.getItem(projectName;
+      var projectName = localStorage.getItem(projectName;
+
+    if (savedTaskText !== null) {
+      $("#hour-" + hour + " .description").val(savedTaskText);
+   
+
+    
+    }
+  }
+}
+
+retrieveFromLocal();
 
 
 
